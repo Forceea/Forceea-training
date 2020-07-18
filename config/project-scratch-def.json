@@ -1,0 +1,31 @@
+{
+  "orgName": "Forceea",
+  "description": "Forceea",
+  "country": "IE",
+  "username": "admin@examplefh7dosd.com",
+  "edition": "Enterprise",
+  "hasSampleData": false,
+  "features": [
+    "AuthorApex",
+    "DebugApex",
+    "Knowledge",
+    "MarketingUser",
+    "ProcessBuilder",
+    "RecordTypes",
+    "SalesUser",
+    "ServiceCloud",
+    "ServiceUser",
+    "Workflow"
+  ],
+  "settings": {
+    "lightningExperienceSettings": {
+      "enableS1DesktopEnabled": true
+    },
+    "mobileSettings": {
+      "enableS1EncryptedStoragePref2": false
+    },
+    "languageSettings": {
+      "enableTranslationWorkbench": true
+    }
+  }
+}
