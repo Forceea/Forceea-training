@@ -2,7 +2,7 @@
 <RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>BigOpp</fullName>
     <active>true</active>
-    <businessProcess>Sales process</businessProcess>
+    <businessProcess>Standard</businessProcess>
     <label>Big Opportunity</label>
     <picklistValues>
         <picklist>ForecastCategoryName</picklist>
