@@ -8,6 +8,10 @@ The repository contains the following classes:
 
 A DataFactory class with templates for various SObjects.
 
+### ForceeaTrainingBatch.cls
+
+An example of Batch Apex with Forceea.
+
 ### ForceeaTrainingTest.cls
 
 A Test class that demonstrates various Forceea methods, definitions, techniques and concepts.
