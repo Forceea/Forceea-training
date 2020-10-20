@@ -1,8 +1,11 @@
 # Forceea-training
 
-#### Forceea scipts for training purposes.
+This repository contains examples for **Forceea data factory**,
+in the following classes:
 
-The repository contains the following classes:
+### Article_WhoNeedsSoManyRecords
+
+The code of the article "Who needs so many records?".
 
 ### ForceeaTrainingDataFactory.cls
 
