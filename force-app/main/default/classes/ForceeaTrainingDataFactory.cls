@@ -13,7 +13,8 @@ public with sharing class ForceeaTrainingDataFactory {
 
     public static Map<String, FObject> templateAccounts() {
         return new Map<String, FObject>{
-            ACCOUNTS => new FObject(Account.SObjectType, DEFAULT_NUM_ACCOUNTS)
+            ACCOUNTS => new FObject(Account.SObjectType)
+                .setNumberOfRecords(DEFAULT_NUM_ACCOUNTS)
                 .setDefinition(Account.Name, 'static value("Company ")')
                 .setDefinition(Account.Name, 'serial type(number) from(100) step(1) scale(0)')
         };

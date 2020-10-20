@@ -22,19 +22,18 @@ public class ForceeaTrainingTest {
         FObject.setGlobalVerbose('debug');
         FObject.setGlobalVariable('today', Date.today());
 
-        // with function-add
-        FObject obj1 = new FObject(FObjectOne__c.SObjectType, 10)
-            .setDefinition('$Days', 'random type(number) from(-365) to(0) scale(0)')
-            .setDefinition(FObjectOne__c.TestDate__c, 'static value({@today})')
-            .setDefinition(FObjectOne__c.TestDate__c, 'function-add field($Days)')
-            .createRecords();
-        //obj1.insertRecords(true);
-
         // without function-add (faster)
-        FObject obj2 = new FObject(FObjectOne__c.SObjectType)
+        FObject obj1 = new FObject(FObjectOne__c.SObjectType)
             .setNumberOfRecords(10) // it's the same as the constructor
             .setVariable('DateFrom', Date.today().addDays(-365))
             .setDefinition(FObjectOne__c.TestDate__c, 'random type(date) from({@DateFrom}) to({@today})')
+            .createRecords();
+
+        // with function-add
+        FObject obj2 = new FObject(FObjectOne__c.SObjectType, 10)
+            .setDefinition('$Days', 'random type(number) from(-365) to(0) scale(0)')
+            .setDefinition(FObjectOne__c.TestDate__c, 'static value({@today})')
+            .setDefinition(FObjectOne__c.TestDate__c, 'function-add field($Days)')
             .createRecords();
     }
 
@@ -63,14 +62,16 @@ public class ForceeaTrainingTest {
      */
     @IsTest
     public static void demoInsertContactsWithMajorAccounts() {
-        FObject.setGlobalVerbose('debug');
         Map<String, FObject> template = ForceeaTrainingDataFactory.templateContactsWithMajorAccounts();
 
         template.get(ForceeaTrainingDataFactory.ACCOUNTS)
+            .setVerbose('debug')
             .setNumberOfRecords(10)
+            .setDefinition(Account.Website, 'random type(url)')
             .setDefinition(Account.Industry, 'random type(picklist) except(Energy,Chemicals)');
 
         template.get(ForceeaTrainingDataFactory.CONTACTS)
+            .setVerbose('debug')
             .setNumberOfRecords(100);
 
         FObject.insertRecordsFromTemplate(template, true);
